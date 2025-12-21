@@ -4,7 +4,18 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import CareerAdvice from "./pages/CareerAdvice";
+import SkillAssessment from "./pages/SkillAssessment";
+import ResumeBuilder from "./pages/ResumeBuilder";
+import InterviewPrep from "./pages/InterviewPrep";
+import CareerRoadmap from "./pages/CareerRoadmap";
+import SalaryInsights from "./pages/SalaryInsights";
+import SavedCareers from "./pages/SavedCareers";
+import Subscription from "./pages/Subscription";
 import NotFound from "./pages/NotFound";
+import { AppLayout } from "./components/layout/AppLayout";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +27,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/app" element={<AppLayout />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="career-advice" element={<CareerAdvice />} />
+            <Route path="skill-assessment" element={<SkillAssessment />} />
+            <Route path="resume-builder" element={<ResumeBuilder />} />
+            <Route path="interview-prep" element={<InterviewPrep />} />
+            <Route path="career-roadmap" element={<CareerRoadmap />} />
+            <Route path="salary-insights" element={<SalaryInsights />} />
+            <Route path="saved-careers" element={<SavedCareers />} />
+            <Route path="subscription" element={<Subscription />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
