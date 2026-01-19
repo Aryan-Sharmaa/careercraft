@@ -62,23 +62,15 @@ export default function Index() {
               and achieve your professional goals with personalized guidance.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <div className="flex justify-center">
               <Button
                 variant="hero"
                 size="lg"
                 className="sm:h-14 sm:px-10 sm:text-lg"
                 onClick={() => navigate("/login")}
               >
-                Get Started Free
+                Get Started
                 <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
-              <Button
-                variant="glass"
-                size="lg"
-                className="sm:h-14 sm:px-10 sm:text-lg"
-                onClick={() => navigate("/login")}
-              >
-                Watch Demo
               </Button>
             </div>
           </div>
